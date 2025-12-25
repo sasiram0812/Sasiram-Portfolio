@@ -4,6 +4,10 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import chatify from "../../Assets/Projects/p.png";
 import bitsOfCode from "../../Assets/Projects/c.png";
+import bits from "../../Assets/Projects/a.png";
+import bitss from "../../Assets/Projects/b.png";
+
+
 
 function Projects() {
   return (
@@ -36,6 +40,29 @@ function Projects() {
               description="A user-friendly CGPA Calculator that helps students easily compute their GPA and CGPA semester-wise with accurate results."
               ghLink="https://github.com/sasiram0812/CGPACalculator-"
               demoLink="https://cgpacalculatorreact.netlify.app/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bits}
+              isBlog={false}
+              title="Portfolio"
+              description="A personal portfolio website built to showcase my projects, skills, and academic journey as an IT student, with a clean design and responsive layout."
+              ghLink="https://github.com/sasiram0812/Sasiram-Portfolio.git"
+              demoLink="https://sasiram-portfolio.netlify.app/"
+            />
+          </Col>
+
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bitss}
+              isBlog={false}
+              title="Email Automation using UiPath"
+              description="A UiPath-based Email Automation project designed to automatically read, process, and respond to emails, improving operational efficiency and reducing manual work."
+              ghLink=""
+              demoLink
             />
           </Col>
 

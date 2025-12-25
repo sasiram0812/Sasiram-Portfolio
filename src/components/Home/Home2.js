@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
+//import my from "../../Assets/aa.svg";
+
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -24,7 +26,7 @@ function Home2() {
               <br />
               <br />I am fluent in classics like
               <i>
-                <b className="purple"> Java, c++. </b>
+                <b className="purple"> Java. </b>
               </i>
               <br />
               <br />

@@ -741,3 +741,63 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+/* Background with Institution Logo */
+.about-bg {
+  position: relative;
+  background-color: #0b0c10;
+  overflow: hidden;
+}
+
+/* Logo background layer */
+.about-bg::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 130px;               /* LEFT SIDE */
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  background-image: url("https://gmeet.skcet.ac.in/assets/images/Institution-Logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.35;            /* LOW VISION SAFE */
+  filter: blur(1px);        /* SOFT BLUR */
+  pointer-events: none;
+}
+
+/* Content stays above background */
+.about-content {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 1.05rem;       /* Better readability */
+  line-height: 1.8;
+}
+
+/* Activities list */
+.about-activity {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Quote text */
+.quote-text {
+  color: #b48dd3;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Purple highlight */
+.purple {
+  color: #a855f7;
+  font-weight: 600;
+}
+
+/* Low-vision improvement */
+.quote-card-view {
+  background: rgba(18, 18, 25, 0.9);
+  border-radius: 16px;
+  border: none;
+  padding: 20px;
+}
