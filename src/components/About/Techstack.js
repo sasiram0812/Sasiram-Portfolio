@@ -8,7 +8,6 @@ import {
   DiJava,
 } from "react-icons/di";
 import {
-  SiRedis,
   SiFirebase,
 } from "react-icons/si";
 
