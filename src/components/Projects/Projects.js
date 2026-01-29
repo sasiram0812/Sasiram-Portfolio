@@ -6,7 +6,7 @@ import chatify from "../../Assets/Projects/p.png";
 import bitsOfCode from "../../Assets/Projects/c.png";
 import bits from "../../Assets/Projects/a.png";
 import bitss from "../../Assets/Projects/b.png";
-
+import bb from "../../Assets/Projects/aa.png"
 
 
 function Projects() {
@@ -63,6 +63,17 @@ function Projects() {
               description="A UiPath-based Email Automation project designed to automatically read, process, and respond to emails, improving operational efficiency and reducing manual work."
               ghLink=""
               demoLink
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bb}
+              isBlog={false}
+              title="Unnal Mudiyum – All In One Place"
+              description="Unnal Mudiyum is a full-stack student productivity web app that helps users manage study tracking, to-do tasks, fitness logs, and daily insights in one place. Built with React, Firebase Authentication, Firestore, and deployed on Netlify, featuring secure login, real-time data sync, and a clean responsive UI."
+              ghLink="https://github.com/sasiram0812/Unnal-Mudiyum"
+              demoLink="https://unnalmudiyum.netlify.app/"
             />
           </Col>
 
