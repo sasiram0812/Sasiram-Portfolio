@@ -253,16 +253,16 @@ button:focus {
 .home-header {
   padding-top: 80px !important;
 }
-
 .home-section {
   position: relative;
-  z-index: -1;
+  z-index: 0;   /* ✅ FIX */
   background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
   padding-bottom: 30px !important;
   padding-top: 30px !important;
 }
+
 
 .home-content {
   padding: 9rem 0 2rem !important;
@@ -448,6 +448,13 @@ button:focus {
   position: relative !important;
   padding-top: 150px !important;
   padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+}
+
+.contact-section {
+  position: relative !important;
+  padding-top: center !important;
+  padding-bottom: 130px !important;
   background-image: var(--section-background-color) !important;
 }
 
@@ -801,3 +808,143 @@ button:focus {
   border: none;
   padding: 20px;
 }
+.fork-btn-inner {
+  background-color: #0a66c2 !important;
+  border-color: #0a66c2 !important;
+}
+
+.fork-btn-inner:hover {
+  background-color: #004182 !important;
+}
+/* 🔹 Force particles behind everything */
+#tsparticles {
+  position: fixed !important;
+  inset: 0;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 🔹 Contact content always on top */
+.contact-content {
+  position: relative;
+  z-index: 10 !important;
+}
+
+/* 🔹 Ensure inputs are clickable */
+.contact-content input,
+.contact-content textarea,
+.contact-content button {
+  position: relative;
+  z-index: 11 !important;
+  pointer-events: auto !important;
+}
+#tsparticles {
+  pointer-events: none;
+}
+.home-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.form-control,
+button {
+  pointer-events: auto !important;
+}
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.home-section .btn-success {
+  background-color: #16a085;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.home-section .btn-success:hover {
+  background-color: #1abc9c;
+  transform: translateY(-3px);
+}
+
+.home-section .btn-outline-light:hover {
+  transform: translateY(-3px);
+}
+.navbar .nav-link.active {
+  color: #1abc9c !important;
+}
+.project-heading {
+  text-align: center;
+  margin-top: 40px;
+}
+.leetcode-card {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+.coding-card {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+.cp-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  color: white;
+  max-width: 450px;
+  margin: 0 auto;
+  transition: 0.3s ease;
+}
+
+.cp-card:hover {
+  transform: translateY(-5px);
+}
+
+.cp-card a {
+  color: #00c896;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cp-card a:hover {
+  text-decoration: underline;
+}
+
+.cp-cardd {
+
+  transition: 0.3s ease;
+}
+
+.cp-cardd:hover {
+  transform: translateY(-5px);
+}
+
+.cp-cardd a {
+  color: #00c896;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cp-cardd a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+

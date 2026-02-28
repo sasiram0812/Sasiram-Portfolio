@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../Assets/pre.svg";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import {
   AiFillStar,
@@ -14,6 +14,10 @@ import {
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
+import { FaLinkedinIn } from "react-icons/fa";
+import { AiOutlineContacts } from "react-icons/ai";
+
+
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -53,14 +57,14 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link as={NavLink} to="/" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
+                as={NavLink}
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
@@ -70,7 +74,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
+                as={NavLink}
                 to="/project"
                 onClick={() => updateExpanded(false)}
               >
@@ -83,26 +87,47 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link
-                as={Link}
+                as={NavLink}
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
+            <Nav.Item>
+  <Nav.Link
+    as={NavLink}
+    to="/contact"
+    onClick={() => updateExpanded(false)}
+  >
+    <AiOutlineContacts style={{ marginBottom: "2px" }} /> Contact
+  </Nav.Link>
+</Nav.Item>
+
 
             
 
-            <Nav.Item className="fork-btn">
-              <Button
-                href="https://github.com/sasiram0812"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>
-            </Nav.Item>
+  <Nav.Item className="fork-btn">
+  <Button
+    href="https://github.com/sasiram0812"
+    target="_blank"
+    className="fork-btn-inner"
+  >
+    <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
+    <AiFillStar style={{ fontSize: "1.1em" }} />
+  </Button>
+</Nav.Item>
+
+<Nav.Item className="fork-btn">
+  <Button
+    href="https://www.linkedin.com/in/sasiram-v-6134982a3/"
+    target="_blank"
+    className="fork-btn-inner"
+  >
+    <FaLinkedinIn style={{ fontSize: "1.2em" }} />
+  </Button>
+</Nav.Item>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
