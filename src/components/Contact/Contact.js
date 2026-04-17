@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import Particle from "../Particle";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ function Contact() {
 
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,23 +23,42 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+    setSuccess(false);
+    setError("");
+
     try {
+      // ✅ 1. Save to Firebase
       await addDoc(collection(db, "contacts"), {
         ...formData,
         createdAt: new Date(),
       });
 
+      // ✅ 2. Send Email
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+
       setSuccess(true);
       setFormData({ name: "", email: "", message: "" });
+
     } catch (err) {
+      console.error(err);
       setError("Something went wrong. Try again.");
     }
+
+    setLoading(false);
   };
 
   return (
     <section id="contact">
-
-
       <Container fluid className="contact-section">
         <Particle />
         <Container className="home-content contact-content">
@@ -90,8 +111,8 @@ function Contact() {
                   />
                 </Form.Group>
 
-                <Button type="submit" className="fork-btn-inner">
-                  Send Message 🚀
+                <Button type="submit" className="fork-btn-inner" disabled={loading}>
+                  {loading ? "Sending..." : "Send Message 🚀"}
                 </Button>
               </Form>
             </Col>
